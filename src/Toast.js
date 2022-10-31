@@ -52,7 +52,7 @@ export const Toast = (function (options = {}) {
       const toast = document.createElement('div')
 
       toast.setAttribute('role', 'alert')
-      toast.setAttribute('data-toast', id)
+      toast.setAttribute('data-toast-id', id)
       toast.classList.add(this.className, ...classes)
       if (autohide) {
         setTimeout(() => toast.remove(), autohide)
