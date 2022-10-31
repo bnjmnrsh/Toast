@@ -48,7 +48,7 @@ export const Toast = (function (options = {}) {
       if (!message) {
         throw new Error('Toast.js requires a message string!')
       }
-      id = id.toString() || toastID()
+      id = id || toastID()
       const toast = document.createElement('div')
 
       toast.setAttribute('role', 'alert')
