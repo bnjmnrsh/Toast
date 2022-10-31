@@ -35,7 +35,7 @@ export const Toast = (function (options = {}) {
      * @param {boolean} prepend prepend instead of append the toast
      * @param {array} classes an array of suplimental classes
      * @param {string} id pass in your own ID insead of using the internal methods
-     * @returns {string} ID for the toast message just created
+     * @returns {string|boolean:false} ID for the toast message just created
      */
     publicAPIs.create = function (
       message,
