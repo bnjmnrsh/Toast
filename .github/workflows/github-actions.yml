@@ -1,0 +1,37 @@
+name: ci-actions
+on: [push]
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+    # Necessary to push the generated badges to the repo
+    - name: Check out repository code
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
+
+    # Install the npm moduels onto the testing environment
+    - name: Install modules
+      run: yarn
+
+    # Necessary to generate the coverage report.
+    # Make sure to add 'json-summary' to the coverageReporters in jest options
+    - name: Run Tests
+      run: yarn test-ci
+
+    # Run the build to ensure that banner details are updated from package.json properly (ie version number etc).
+    # Rollup --watch and --watchAll do not update these when package.json is updated.
+    # This step also ensures that the project builds as expected.
+    - name: Build
+      run: yarn build
+
+    - name: Git Auto Commit
+      uses: stefanzweifel/git-auto-commit-action@v4.15.1
+      with:
+        commit_message: Auto build
+        repository: ./dist/
+
+    - name: Generating coverage badges
+      uses: 'jpb06/jest-badges-action@latest'
+      with:
+        branches: main,ci-build

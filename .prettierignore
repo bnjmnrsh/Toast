@@ -1,0 +1,11 @@
+# Ignore artifacts:
+docs
+dist
+build
+coverage
+LICENSE
+
+# Ignore vendor assetts
+src/js/vendor
+src/scss/vendor
+src/css/vendor
