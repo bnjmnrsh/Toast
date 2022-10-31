@@ -84,9 +84,13 @@ export const Toast = (function (options = {}) {
      * @returns
      */
     publicAPIs.destroy = function (id) {
-      if (!id) return
+      if (!id) return false
       const target = document.querySelector(`[data-toast-id="${id}"]`)
-      if (target) target.remove()
+      if (target) {
+        target.remove()
+        return publicAPIs
+      }
+      return false
     }
     return publicAPIs
   }
