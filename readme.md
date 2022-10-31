@@ -2,7 +2,7 @@
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/bnjmnrsh/toast)](https://github.com/bnjmnrsh/Toast)
 [![GitHub license](https://img.shields.io/github/license/bnjmnrsh/Toast)](https://github.com/bnjmnrsh/Toast/blob/master/LICENSE)
 [![GitHub file size in bytes](https://img.shields.io/github/size/bnjmnrsh/toast/dist/Toast.min.js)](https://raw.githubusercontent.com/bnjmnrsh/Toast/main/dist/Toast.min.js)
-[![GitHub last commit](https://img.shields.io/github/last-commit/bnjmnrsh/Toast/main)](https://github.com/bnjmnrsh/Toast/)
+![GitHub last commit](https://img.shields.io/github/last-commit/bnjmnrsh/Toast)
 [![GitHub issues](https://img.shields.io/github/issues/bnjmnrsh/Toast)](https://github.com/bnjmnrsh/Toast/issues)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/bnjmnrsh/toast/ci-actions)
 ![Branches](./badges/coverage-branches.svg)
