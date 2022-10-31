@@ -21,10 +21,10 @@
  - [What's this about](#whats-this-about-)
  - [Usage](#usage-)
  - [Targeting](#targeting-)
- - [IDs & Classes](#ids--classes-)
+ - [Classes & IDs](#classes--ids-)
  - [Methods](#methods-)
  - [Styling](#styling-)
- - [Note on a11y](#notes-on-ally-)
+ - [Note on a11y](#notes-on-a11y-)
  - [Licence](#licence-isc-)
 
  ## Installation [↑](#table-of-contents)
@@ -55,13 +55,13 @@ import {Toast} from '@bnjmnrsh/toast';
 const toaster = new Toast('body', 'toast', false);
 toaster.create('Hi I\'m a toast!', 0, false, false, [], false);
 ```
-See notes on [Toast Instantiation](#toast-instantiation).
+See notes on [Toast Instantiation](##new-toast----toast-object).
 
 ---
 
 ## Targeting [↑](#table-of-contents)
 
-Each `Toast()` instance can be prepended or append to a target parent node, allowing you to use multiple areas of your UI to display notifications. Further, subsequent notifications can be prepended or appended within the target. See notes on [Toast Instantiation](#toast-instantiation), [Toast.create()](#toastcreate) for details.
+Each `Toast()` instance can be prepended or append to a target parent node, allowing you to use multiple areas of your UI to display notifications. Further, subsequent notifications can be prepended or appended within the target. See notes on [Toast Instantiation](#new-toast----toast-object), [Toast.create()](#toastcreate----id-string) for details.
 
 ```javascript
 const toaster = new Toast('#my-target');
@@ -136,7 +136,7 @@ toaster.destroy(myToast)
 
 ---
 
-## Styling
+## Styling [↑](#table-of-contents)
 
  `Toast.js` doesn't ship with any CSS styles, the below is a basic toast example.
 
