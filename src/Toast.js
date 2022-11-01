@@ -13,7 +13,12 @@ export const Toast = (function (options = {}) {
     publicAPIs.settings = { ...settings, ...options }
     publicAPIs.className = publicAPIs.settings.className
     publicAPIs.target = document.querySelector(publicAPIs.settings.selector)
-    publicAPIs.className = publicAPIs.settings.className
+
+    if (!publicAPIs.target) {
+      throw new Error(
+        `Toast: the target element "${publicAPIs.settings.selector}" could not be found.`
+      )
+    }
 
     // Private Methods
     /**
