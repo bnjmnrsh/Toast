@@ -52,7 +52,7 @@ npm i https://github.com/bnjmnrsh/toast#v0.0.1
 
 ```javascript
 import {Toast} from '@bnjmnrsh/toast';
-const toaster = new Toast('body', 'toast', false);
+const toaster = new Toast({"target":"body", "className":"toast"}); // defaults
 toaster.create('Hi I\'m a toast!', 0, false, false, [], false);
 ```
 See notes on [Toast Instantiation](##new-toast----toast-object).
@@ -61,16 +61,17 @@ See notes on [Toast Instantiation](##new-toast----toast-object).
 
 ## Targeting [↑](#table-of-contents)
 
-Each `Toast()` instance can be prepended or append to a target parent node, allowing you to use multiple areas of your UI to display notifications. Further, subsequent notifications can be prepended or appended within the target. See notes on [Toast Instantiation](#new-toast----toast-object), [Toast.create()](#toastcreate----id-string) for details.
+Each `Toast()` instance can be attached to a different `target` parent node, allowing you to use multiple areas of your UI to display notifications. Further, subsequent notifications can be prepended or appended within the target. See notes on [Toast Instantiation](#new-toast----toast-object), [Toast.create()](#toastcreate----id-string) for details.
 
 ```javascript
-const toaster = new Toast('#my-target');
+const toaster = new Toast({"target": "#my-target"});
 ```
 
  ---
 
 ## Classes & IDs [↑](#table-of-contents)
 
+`Toast.js` provides a few ways to target notifications on the DOM:
 ### Custom toast classes
 When creating new toasts, you can optionally add an array of classes, allowing for different types of message styling, such as `warnings`.
 
@@ -88,14 +89,13 @@ See [Toast.create()](#toastcreate----id-string) for full details.
 
 ### `new Toast()` --> Toast object
 
-Instantiate a new Toast.
+Instantiate a new Toast. Accepts an optional object with two properties: `target` and `className`.
 
 ```javascript
-const toaster = new Toast(
-'#my-target-el', // target of toast, defaults to 'body'
-'my-toast-class', // class of toast, defaults to 'toast'
-prepend {boolean:false} // toasts appended(default) or prepended to target
- )
+const toaster = new Toast({
+  "target":"#my-target-el", // target El to attach toasts to, defaults to 'body'
+  "className":"my-toast",   // base class for all toasts, defaults to 'toast'
+ })
 ```
 
 ---
@@ -109,7 +109,7 @@ toaster.create(
   message {string}, // toast message string
   autohide {int:0}, // autohide the toast after X millisecond
   dismissible {boolean:false}, // renders close button to dismiss notification
-  prepend {boolean:false}, // prepends rather than appends the current toast to the container if there is more than one.
+  prepend {boolean:true}, // false will append the toast to the end of any nodes in the target container.
   classes {array}, // An array of classes to add to the toast container
   id {string:false}, // Custom identifier assigned to `data-toast-id`, if empty toast generates its own id.
 )
