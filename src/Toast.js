@@ -4,8 +4,7 @@
 export const Toast = (function (options = {}) {
   const settings = {
     selector: 'body',
-    className: 'toast',
-    prepend: false
+    className: 'toast'
   }
 
   const Constructor = function (options) {
