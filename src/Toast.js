@@ -46,7 +46,7 @@ export const Toast = (function (options = {}) {
       message,
       autohide = 0,
       dismiss = false,
-      prepend = false,
+      prepend = true,
       classes = [],
       id = false
     ) {
