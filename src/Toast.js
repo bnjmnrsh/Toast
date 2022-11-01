@@ -10,7 +10,8 @@ export const Toast = (function (options = {}) {
   const Constructor = function (options) {
     let ID = 0
     const publicAPIs = {}
-    publicAPIs.settings = { ...options, ...settings }
+    publicAPIs.settings = { ...settings, ...options }
+    publicAPIs.className = publicAPIs.settings.className
     publicAPIs.target = document.querySelector(publicAPIs.settings.selector)
     publicAPIs.className = publicAPIs.settings.className
 
