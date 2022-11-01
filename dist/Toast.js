@@ -1,20 +1,25 @@
-/* ! @preserve @bnjmnrsh/toast v0.0.2 | (c) 2022 bnjmnrsh | ISC | git+https://github.com/bnjmnrsh/Toast.git */
+/* ! @preserve @bnjmnrsh/toast v0.1.0 | (c) 2022 bnjmnrsh | ISC | git+https://github.com/bnjmnrsh/Toast.git */
 /**
  * A utility for mananging toast like UI messages.
  */
 const Toast = (function (options = {}) {
   const settings = {
     selector: 'body',
-    className: 'toast',
-    prepend: false
+    className: 'toast'
   };
 
   const Constructor = function (options) {
     let ID = 0;
     const publicAPIs = {};
-    publicAPIs.settings = { ...options, ...settings };
-    publicAPIs.target = document.querySelector(publicAPIs.settings.selector);
+    publicAPIs.settings = { ...settings, ...options };
     publicAPIs.className = publicAPIs.settings.className;
+    publicAPIs.target = document.querySelector(publicAPIs.settings.selector);
+
+    if (!publicAPIs.target) {
+      throw new Error(
+        `Toast: the target element "${publicAPIs.settings.selector}" could not be found.`
+      )
+    }
 
     // Private Methods
     /**
@@ -42,7 +47,7 @@ const Toast = (function (options = {}) {
       message,
       autohide = 0,
       dismiss = false,
-      prepend = false,
+      prepend = true,
       classes = [],
       id = false
     ) {

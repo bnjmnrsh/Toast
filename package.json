@@ -1,6 +1,6 @@
 {
   "name": "@bnjmnrsh/toast",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A small helper for managing toast like messages.  ",
   "main": "dist/Toast.min.js",
   "type": "module",
