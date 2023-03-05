@@ -1,4 +1,4 @@
-/* ! @preserve @bnjmnrsh/toast v0.1.0 | (c) 2022 bnjmnrsh | ISC | git+https://github.com/bnjmnrsh/Toast.git */
+/* ! @preserve @bnjmnrsh/toast v0.1.0 | (c) 2023 bnjmnrsh | ISC | git+https://github.com/bnjmnrsh/Toast.git */
 var _bnjmnrsh_toast = (function (exports) {
   'use strict';
 
