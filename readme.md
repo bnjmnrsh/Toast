@@ -172,7 +172,7 @@ toaster.destroy(myToast)
 
 ## Notes on a11y [↑](#table-of-contents)
 
- There are a few minimum accessibility requirements that `Toast.js` implements. Firstly, all toast messages are given the aria `role="alert"` attribute. By itself however this role is not enough to make screen readers announce a notification, as this role only flags to screen readers that any content in this node should be announced as an alert. To get around this limitation `Toast.js` first appends/prepends the notification to the DOM, and then a millisecond later, populates the toast message inside. This delay wont be noticed by users, but is enough to trigger an announcement by screen readers[^1].
+There are a few minimum accessibility requirements that `Toast.js` implements. Firstly, all toast messages are given the aria `role="alert"` attribute. This roal by itself however is not enough to make screen readers announce a notification, as this role only flags to screen readers that any content in this node should be announced as an alert once it detects a change. If the DOM element and its content are add together, no announcement will be made. To get around this limitation `Toast.js` first appends/prepends the notification to the DOM, and then a millisecond later, populates the toast message inside. This delay wont be noticed by users, but is enough to trigger an announcement by screen readers[^1].
 
 While `Toast.js` puts in place a strong foundation of HTML and basic behaviour, the accessibility of any component is dependant on how it is styled and implemented. It's best to review your own implementation regularly to understand how it may be effecting your users.
 
