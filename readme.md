@@ -4,7 +4,7 @@
 [![GitHub file size in bytes](https://img.shields.io/github/size/bnjmnrsh/toast/dist/Toast.min.js)](https://raw.githubusercontent.com/bnjmnrsh/Toast/main/dist/Toast.min.js)
 ![GitHub last commit](https://img.shields.io/github/last-commit/bnjmnrsh/Toast)
 [![GitHub issues](https://img.shields.io/github/issues/bnjmnrsh/Toast)](https://github.com/bnjmnrsh/Toast/issues)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/bnjmnrsh/toast/ci-actions)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/bnjmnrsh/toast/github-actions.yml)
 ![Branches](./badges/coverage-branches.svg)
 ![Functions](./badges/coverage-functions.svg)
 ![Lines](./badges/coverage-lines.svg)
@@ -13,7 +13,7 @@
 
 # @bnjmnrsh/toast.js
 
- __A utility for managing toast like UI notifications.__
+ __A utility for managing toast-like UI notifications.__
 
 
 ## Table of Contents
@@ -44,7 +44,7 @@ npm i https://github.com/bnjmnrsh/toast#v0.0.1
 
 ## What's this about [↑](#table-of-contents)
 
-`Toast.js` is a flexible utility to create and manage browser toast type notifications, with basic accessibility baked in. It offers a range of configuration options including custom classes, autohide, and more.
+`Toast.js` is a flexible utility to create and manage browser toast-type notifications, with basic accessibility baked in. It offers a range of configuration options, including custom classes, autohide, and more.
 
  ---
 
@@ -89,7 +89,7 @@ See [Toast.create()](#toastcreate----id-string) for full details.
 
 ### `new Toast()` --> Toast object
 
-Instantiate a new Toast. Accepts an optional object with two properties: `target` and `className`.
+Instantiate a new Toast. Accepts an optional object with `target` and `className` properties.
 
 ```javascript
 const toaster = new Toast({
@@ -119,7 +119,7 @@ toaster.create(
 
 ### `Toast.destroy()` --> Toast object
 
-Removes a toast notification from the DOM by targing the id found on the toast's `data-toast-id` attribute.
+Removes a toast notification from the DOM by targeting the id found on the toast's `data-toast-id` attribute.
 
 ```javascript
   Toast.destroy(
@@ -127,7 +127,7 @@ Removes a toast notification from the DOM by targing the id found on the toast's
   )
 ```
 
-Useage:
+Usage:
 ```javascript
 const toaster = new Toast()
 const myToast = toaster.create("I'm a toast!")
@@ -138,7 +138,7 @@ toaster.destroy(myToast)
 
 ## Styling [↑](#table-of-contents)
 
- `Toast.js` doesn't ship with any CSS styles, the below is a basic toast example.
+ `Toast.js` doesn't ship with any CSS styles; below is a basic toast example:
 
 ```CSS
 .toast {
@@ -172,9 +172,9 @@ toaster.destroy(myToast)
 
 ## Notes on a11y [↑](#table-of-contents)
 
-There are a few minimum accessibility requirements that `Toast.js` implements. Firstly, all toast messages are given the aria `role="alert"` attribute. This roal by itself however is not enough to make screen readers announce a notification, as this role only flags to screen readers that any content in this node should be announced as an alert once it detects a change. If the DOM element and its content are add together, no announcement will be made. To get around this limitation `Toast.js` first appends/prepends the notification to the DOM, and then a millisecond later, populates the toast message inside. This delay wont be noticed by users, but is enough to trigger an announcement by screen readers[^1].
+There are a few minimum accessibility requirements that `Toast.js` implements. Firstly, all toast messages are given the aria `role="alert"` attribute. This role by itself, however, is not enough to make screen readers announce a notification, as this role only flags to screen readers that any content in this node should be announced as an alert once it detects a change. No announcement will be made if the DOM element and its content are added together. To get around this limitation, `Toast.js` first appends/prepends the notification to the DOM, and then a millisecond later, populates the toast message inside. This delay won't be noticed by users, but it is enough to trigger an announcement by screen readers[^1].
 
-While `Toast.js` puts in place a strong foundation of HTML and basic behaviour, the accessibility of any component is dependant on how it is styled and implemented. It's best to review your own implementation regularly to understand how it may be effecting your users.
+While `Toast.js` puts in place a strong foundation of HTML and basic behaviour, the accessibility of any component is dependent on how it is styled and implemented. It's best to review your own implementation regularly to understand how it may be affecting your users.
 
 [^1]: Credit here goes to Heydon Pickering, who is the first person I am aware of covering the technique in the book/website [Inclusive Components](https://inclusive-components.design/).
 
