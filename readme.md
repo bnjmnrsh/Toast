@@ -15,6 +15,7 @@
 
  __A utility for managing toast-like UI notifications.__
 
+And here is a bare-bones CodePen demo: [https://codepen.io/bnjmnrsh/pen/vYPyJXQ](https://codepen.io/bnjmnrsh/pen/vYPyJXQ)
 
 ## Table of Contents
  - [Installation](#installation-)
